@@ -17,7 +17,15 @@ class Login extends Component {
         const result = Joi.validate(this.state.account, this.schema, {
             abortEarly: false
         });
-        console.log(result)
+        console.log(result);
+        const errors ={};
+        const { account } = this.state;
+        if(account.username.trim() === '')
+            errors.username = "Username is required";
+        if(account.password.trim() === '')
+            errors.password = "Password is required";
+        
+        return Object.keys(errors).length === 0 ? null : errors;
     }
     validateProperty = (name, value) => {
         if (name === 'username') {
