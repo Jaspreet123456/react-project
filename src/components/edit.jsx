@@ -34,6 +34,7 @@ class Edit extends Component {
                     <td>{emp.department.name}</td>
                     <td>{emp.email}</td>
                     <td>{emp.number}</td>
+                    <td>{emp.password}</td>
                 </tr>
                 ))}
                 </tbody>

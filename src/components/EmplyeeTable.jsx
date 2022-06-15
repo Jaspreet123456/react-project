@@ -10,6 +10,7 @@ class EmployeeTable extends Component {
         {path: "department.name", label:"Department"},
         {path: "email", label:"Email"},
         {path: "number", label:"Phone-Number"},
+        {path: "password", label:"Password"},
         { key : 'delete'}
     ];
     
@@ -34,6 +35,7 @@ class EmployeeTable extends Component {
                     <td>{emp.department.name}</td>
                     <td>{emp.email}</td>
                     <td>{emp.number}</td>
+                    <td>{emp.password}</td>
                     <td><button onClick={() => onDelete(emp)} className="btn btn-dark">Delete</button></td>
                     <td><button onClick={() => onEdit(emp)} className="btn btn-dark">Edit</button></td>
                     <td><button className="btn btn-dark"> <NavLink to='/Attendance'>Attendance</NavLink></button></td>

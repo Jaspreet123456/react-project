@@ -6,7 +6,7 @@ const employee = [
         department : {id:"102", name:"React"},
         email : "singhrajpal@gmail.com",
         number : 9098263411,
-     
+        password : 123456,
     },
 
     {
@@ -16,7 +16,7 @@ const employee = [
         department :{id:"101", name:"Wordpress"},
         email : "tarun@gmail.com",
         number : 8998263411,
-     
+        password : 123456,
     },
 
     {
@@ -26,6 +26,7 @@ const employee = [
         department : {id:"102", name:"React"},
         email : "ajay@gmail.com",
         number : 9065263411,
+        password : 123456,
     },
     {
         id : 4,
@@ -34,6 +35,7 @@ const employee = [
         department : {id: "103", name:"Angular"},
         email : "chirag@gmail.com",
         number : 9098263422,
+        password : 123456,
      
     },
     {
@@ -43,7 +45,7 @@ const employee = [
         department : {id:"103", name:"Angular"},
         email : "bhagwati@gmail.com",
         number : 9098265411,
-     
+        password : 123456,
     },
     {
         id : 6,
@@ -52,7 +54,7 @@ const employee = [
         department : {id:"101", name:"Wordpress"},
         email : "patel@gmail.com",
         number : 9094563411,
-     
+        password : 123456,
     }
 ]    
 export function getEmployee() {
