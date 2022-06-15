@@ -1,36 +1,37 @@
 import React, { Component } from 'react';
 import Input from './input';
-
+import { Joi } from 'joi-browser';
+import { result } from 'lodash';
 class Login extends Component {
     state = {
         account: { username: "", password: "" },
         errors: {}
-    }
-    
-    validate = () =>{
-        const errors = {};
-        const {account} = this.state;
-        if(account.username.trim() === '')
-            errors.username = "Username is required";
-        if(account.password.trim() === '')
-            errors.password = "Password is required";
-
-        return Object.keys(errors).length === 0 ? null : errors;
     };
 
+    schema = {
+        username: Joi.string().required(),
+        password: Joi.string().required()
+    };
+
+    validate = () => {
+        const result = Joi.validate(this.state.account, this.schema, {
+            abortEarly: false
+        });
+        console.log(result)
+    }
     validateProperty = (name, value) => {
-        if(name === 'username'){
-            if(value.trim() === '') return "Username is required";
+        if (name === 'username') {
+            if (value.trim() === '') return "Username is required";
         }
-        if(name === 'password'){
-            if(value.trim() === '') return "Password is required";
+        if (name === 'password') {
+            if (value.trim() === '') return "Password is required";
         }
     }
 
     handleSubmit = e => {
         e.preventDefault();
         const errors = this.validate();
-        this.setState({errors : errors || {}});
+        this.setState({ errors: errors || {} });
         if (errors) return;
         console.log("submitted")
     };
@@ -54,20 +55,21 @@ class Login extends Component {
                     onChange={this.handleChange}
                     value={account.username}
                     label="Username"
-                    error = {errors.username}
-                    type = "text"
+                    error={errors.username}
+                    type="text"
                 />
                 <Input
                     name="password"
                     onChange={this.handleChange}
                     value={account.password}
                     label="Password"
-                    error = {errors.password}
-                    type = "password"
+                    error={errors.password}
+                    type="password"
                 />
                 <button className="btn btn-primary">Login</button>
             </form>
         </div>;
     }
 }
+
 export default Login;
