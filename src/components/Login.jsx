@@ -15,7 +15,7 @@ class Login extends Component {
         if(account.password.trim() === '')
             errors.password = "Password is required";
 
-        return Object.keys(errors).length ===0 ?null : errors;
+        return Object.keys(errors).length === 0 ? null : errors;
     }
 
     handleSubmit = e => {
