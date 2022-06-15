@@ -23,16 +23,16 @@ class Login extends Component {
             <h1>Login</h1>
             <form onSubmit={this.handleSubmit}>
                 <Input
-                    label="Username"
+                    name="sername"
                     onChange={this.handleChange}
                     value={account.username}
-                    name="sername"
+                    label="Username"
                 />
                 <Input
-                    label="Password"
+                    name="password"
                     onChange={this.handleChange}
                     value={account.password}
-                    name="password"
+                    label="Password"
                 />
                 <button className="btn btn-primary">Login</button>
             </form>
