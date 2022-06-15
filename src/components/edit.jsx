@@ -14,6 +14,7 @@ class Edit extends Component {
     
     render() {
         const { employee, onDelete, onSort, sortColumn, onEdit } = this.props;
+        console.log(employee)
 
         return ( 
             <table className="table">

@@ -18,6 +18,9 @@ const NavBar = () => {
                 <li class="nav-item">
                     <NavLink to='/Attendance'>Attendance</NavLink>
                 </li>
+                <li class="nav-item">
+                    <NavLink to='/Login'>LoginForm</NavLink>
+                </li>
             </ul>
         </>
     );
