@@ -1,10 +1,14 @@
-import React from 'react'
-import Login from './Login';
+import React, { Component } from 'react';
 
-const Login = () => {
+class Login extends Component {
+    handleSubmit = e =>{
+        e.preventDefault();
+        console.log("Submitted")
+    };
+    render() {
     return <div>
         <h1>Login</h1>
-        <form action="">
+        <form onSubmit={this.handleSubmit}>
             <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input id='username' type="text" className="form-control" />
@@ -16,6 +20,6 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
         </form>
     </div>;
+    }
 }
- 
 export default Login;
