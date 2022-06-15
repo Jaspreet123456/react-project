@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Input from './input';
 import { Joi } from 'joi-browser';
-import { result } from 'lodash';
+
 class Login extends Component {
     state = {
         account: { username: "", password: "" },
