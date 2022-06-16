@@ -15,7 +15,8 @@ import "bootstrap/dist/css/bootstrap.css";
 class App extends Component {
   render(){
     return (
-      <> 
+      
+      <>
         <Switch>
          <Route exact path='/'  component = {NavBar} />
           <Route exact path='/Employee'  component = {Employee} />
