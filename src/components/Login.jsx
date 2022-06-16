@@ -49,12 +49,12 @@ class Login extends Component {
         //     return result;
         // }
         const res = employee.find(user => user.email === account.username)
-        console.log(res)
         if (res) {
             if (res.password !== account.password) {
-                console.log("Invalid");
+                const error = console.log("Invalid")
+                return error;
             } else {
-                this.props.history.push("/");
+                this.props.history.push("/Employee");
                 console.log("logged In");
             }
         } else {
@@ -100,7 +100,7 @@ class Login extends Component {
                     error={errors.password}
                 />
                 <button
-                    onClick={this.login()}
+                    onClick={this.login}
                     disabled={this.validate()}
                     className="btn btn-primary">Login</button>
             </form>
