@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Input from './input';
 import  Joi  from 'joi-browser';
+import { Redirect } from 'react-router-dom';
+import NavBar from './NavBar';
+import { getEmployee } from './employee';
 
 class Login extends Component {
     state = {
         account: { username: "", password: "" },
-        errors: {}
+        errors: {},
+        employee : getEmployee()
     };
 
     schema = {
@@ -27,7 +31,17 @@ class Login extends Component {
         const schema = {[name]: this.schema[name]};
         const { error } = Joi.validate(obj, schema);
         return error ? error.details[0].message : null;
-    }
+    };
+
+    login(username, password){
+        const {employee} = this.state;
+        if(username === employee.firstname || password === employee.password){
+            return <Redirect to="/NavBar"></Redirect>
+        }
+        else{
+            console.log("Please enter valid Email and Password");
+        }
+    };
 
     handleSubmit = e => {
         e.preventDefault();
@@ -66,6 +80,7 @@ class Login extends Component {
                     error={errors.password}
                 />
                 <button 
+                onClick = {this.login()}
                 disabled = {this.validate()}
                 className="btn btn-primary">Login</button>
             </form>
